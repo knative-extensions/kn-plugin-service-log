@@ -1,0 +1,30 @@
+// This documentation describes your plugin. It is written in Asciidoc, which
+// is very similar to Markdown, but much more powerful (i.e. it allows comments
+// like this)
+// See the short reference at for the main commands: http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
+// Tip: Asciidoc authors often use to line-break after each sentence. That way, it's easier to move things around and to identify parts.
+
+## kn-service-log
+
+// Add a summary description here. This description should fit in a single sentence.
+
+`kn service log SERVICE` follow the current logs of a service's running pods.
+It prints the revision and pod index prefix and works basically like _stern_
+
+Compile with 
+
+```
+./hack/builds.sh
+```
+
+then move `kn-service-log` to `~/.config/kn/plugins/` and call kn with 
+
+```
+kn sevice log mysvc &
+```
+
+_this is work in progress ..._
+// ### Description
+
+// A longer description which also describes the use cases that this plugin solves.
+
