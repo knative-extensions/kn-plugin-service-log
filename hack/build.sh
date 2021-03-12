@@ -29,7 +29,7 @@ SOURCE_DIRS="cmd pkg"
 MAIN_SOURCE_DIR="cmd"
 
 # Package which holds the version variables
-VERSION_PACKAGE="rhuss/kn-service-log/pkg"
+VERSION_PACKAGE="knative.dev/kn-service-log/pkg"
 
 # =================================================
 
@@ -199,6 +199,7 @@ check_license() {
 update_deps() {
   echo "🚒 Update"
   go mod tidy
+  go mod vendor
 }
 
 watch() {

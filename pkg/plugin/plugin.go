@@ -26,7 +26,7 @@ func init() {
 	plugin.InternalPlugins = append(plugin.InternalPlugins, &logPlugin{})
 }
 
-type logPlugin struct {}
+type logPlugin struct{}
 
 func (l *logPlugin) Name() string {
 	return "kn service log"
@@ -38,7 +38,7 @@ func (l *logPlugin) Execute(args []string) error {
 	defer (func() {
 		os.Args = oldArgs
 	})()
-	os.Args = append([]string { "kn-service-log" }, args...)
+	os.Args = append([]string{"kn-service-log"}, args...)
 	return cmd.Execute()
 }
 
@@ -47,7 +47,7 @@ func (l *logPlugin) Description() (string, error) {
 }
 
 func (l *logPlugin) CommandParts() []string {
-	return []string{ "service", "log" }
+	return []string{"service", "log"}
 }
 
 // Path is empty because its an internal plugins
