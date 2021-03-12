@@ -16,22 +16,7 @@
 
 set -o pipefail
 
-# =================================================
-# CUSTOMIZE ME:
-
-# Name of the plugin
-PLUGIN="kn-service-log"
-
-# Directories containing go code which needs to be formatted
-SOURCE_DIRS="cmd pkg"
-
-# Directory which should be compiled
-MAIN_SOURCE_DIR="cmd"
-
-# Package which holds the version variables
-VERSION_PACKAGE="knative.dev/kn-service-log/pkg"
-
-# =================================================
+source $(dirname $0)/global_vars.sh
 
 # Store for later
 if [ -z "$1" ]; then
