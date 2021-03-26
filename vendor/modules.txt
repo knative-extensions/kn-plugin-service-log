@@ -212,10 +212,10 @@ k8s.io/klog
 k8s.io/klog/v2
 # k8s.io/utils v0.0.0-20210111153108-fddb29f9d009
 k8s.io/utils/integer
-# knative.dev/client v0.21.1-0.20210311205325-d65a64987231
+# knative.dev/client v0.21.1-0.20210319143953-43b669fe9fb6
 ## explicit
 knative.dev/client/pkg/kn/plugin
-# knative.dev/hack v0.0.0-20210309141825-9b73a256fd9a
+# knative.dev/hack v0.0.0-20210325223819-b6ab329907d3
 ## explicit
 knative.dev/hack
 # sigs.k8s.io/structured-merge-diff/v4 v4.0.2
