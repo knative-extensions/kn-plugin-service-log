@@ -143,7 +143,7 @@ func watchForPodEvents(ctx context.Context, pod corev1.PodInterface, service str
 		},
 	}
 
-	watcher, err := pod.Watch(metav1.ListOptions{Watch: true, LabelSelector: labels.Set(labelSelector.MatchLabels).String()})
+	watcher, err := pod.Watch(context.TODO(), metav1.ListOptions{Watch: true, LabelSelector: labels.Set(labelSelector.MatchLabels).String()})
 	if err != nil {
 		return nil, nil, err
 	}

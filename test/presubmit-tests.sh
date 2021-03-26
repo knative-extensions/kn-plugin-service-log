@@ -21,13 +21,13 @@
 # (the filter in markdown_build_tests() in test-infra/scripts/presumit-tests.sh is
 # not strong enough
 export DISABLE_MD_LINTING=1
-export DISABLE_MD_LINK_CHECK=1
-
 export PRESUBMIT_TEST_FAIL_FAST=1
-export GO111MODULE=on
 
-# Use predefined tests
-source $TEST_INFRA_SCRIPTS/presubmit-tests.sh
+export GO111MODULE=on
+export KNATIVE_SERVING_VERSION=${KNATIVE_SERVING_VERSION:-latest}
+export KNATIVE_EVENTING_VERSION=${KNATIVE_EVENTING_VERSION:-latest}
+
+source $(dirname $0)/../vendor/knative.dev/hack/presubmit-tests.sh
 
 # Run cross platform build to ensure kn compiles for Linux, macOS and Windows
 function post_build_tests() {

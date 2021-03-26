@@ -86,7 +86,7 @@ func (t *Tail) Start(ctx context.Context, pod v1.PodInterface) {
 			Container:  "user-container",
 		})
 
-		stream, err := req.Stream()
+		stream, err := req.Stream(context.TODO())
 		if err != nil {
 			fmt.Println(fmt.Errorf("Error opening stream to for revision %s: (%s/%s) : %v\n", t.revisionName, t.namespace, t.podName, err))
 			return
