@@ -1,6 +1,9 @@
 approvers:
-- dsimansk
-- rhuss
-# Aliases
-- wg-leads
-- toc
+- technical-oversight-committee
+- knative-release-leads
+- client-writers
+- kn-plugin-service-log-approvers
+
+reviewers:
+- client-writers
+- kn-plugin-service-log-approvers
