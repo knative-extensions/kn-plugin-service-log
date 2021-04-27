@@ -20,7 +20,7 @@ Compile with
 then move `kn-service-log` to `~/.config/kn/plugins/` and call kn with 
 
 ```
-kn sevice log mysvc &
+kn service log mysvc &
 ```
 
 _this is work in progress ..._
