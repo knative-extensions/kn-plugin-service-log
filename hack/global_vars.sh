@@ -16,7 +16,7 @@
 # you are creating
 
 # Name of the plugin
-PLUGIN="kn-service-log"
+PLUGIN="kn-source-kamelet"
 
 # Directories containing go code which needs to be formatted
 SOURCE_DIRS="cmd pkg"
@@ -25,4 +25,4 @@ SOURCE_DIRS="cmd pkg"
 MAIN_SOURCE_DIR="cmd"
 
 # Package which holds the version variables
-VERSION_PACKAGE="knative.dev/kn-service-log/pkg"
+VERSION_PACKAGE="knative.dev/kn-plugin-source-kamelet/internal/command"
