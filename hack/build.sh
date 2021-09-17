@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright 2020
+# Copyright 2020 The Knative Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 set -o pipefail
 
-source $(dirname $0)/global_vars.sh
+# =================================================
 
 # Store for later
 if [ -z "$1" ]; then
@@ -86,8 +86,8 @@ run() {
   go_build
   go_test
 
-  ## echo "────────────────────────────────────────────"
-  # ./$PLUGIN version
+  echo "────────────────────────────────────────────"
+  ./$PLUGIN --version
 }
 
 
@@ -127,7 +127,7 @@ source_format() {
 
 go_build() {
   echo "🚧 Compile"
-  go build -mod=mod -ldflags "$(build_flags $(basedir))" -o $PLUGIN "./$MAIN_SOURCE_DIR/..."
+  go build -ldflags "$(build_flags $(basedir))" -o $PLUGIN "./$MAIN_SOURCE_DIR/..."
 }
 
 go_test() {
@@ -143,7 +143,7 @@ go_test() {
 
   echo "🧪 ${X}Test"
   set +e
-  go test -v ./... >$test_output 2>&1
+  go test -v ./pkg/... >$test_output 2>&1
   local err=$?
   if [ $err -ne 0 ]; then
     echo "🔥 ${red}Failure${reset}"
@@ -156,12 +156,12 @@ go_test() {
 
 check_license() {
   echo "⚖️ ${S}License"
-  local required_keywords=("Apache License" "LICENSE-2.0")
+  local required_keywords=("Authors" "Apache License" "LICENSE-2.0")
   local extensions_to_check=("sh" "go" "yaml" "yml" "json")
 
   local check_output=$(mktemp /tmp/${PLUGIN}-licence-check.XXXXXX)
   for ext in "${extensions_to_check[@]}"; do
-    find . -name "*.$ext" -a \! -path "./vendor/*" -a \! -path "./.*" -print0 |
+    find . -name "*.$ext" -a \! -path "./vendor/*" -a \! -path "./.*" -a \! -path "./third_party/*" -print0 |
       while IFS= read -r -d '' path; do
         for rword in "${required_keywords[@]}"; do
           if ! grep -q "$rword" "$path"; then
@@ -189,7 +189,7 @@ update_deps() {
 
 watch() {
     local command="./hack/build.sh --fast"
-    local fswatch_opts="-e \"^\..*$\" -o $SOURCE_DIRS"
+    local fswatch_opts='-e "^\..*$" -o $SOURCE_DIRS'
     if $(has_flag --test -t); then
       command="$command --test"
     fi
@@ -260,11 +260,16 @@ cross_build() {
   export CGO_ENABLED=0
   echo "   🐧 ${PLUGIN}-linux-amd64"
   GOOS=linux GOARCH=amd64 go build -ldflags "${ld_flags}" -o ./${PLUGIN}-linux-amd64 "./$MAIN_SOURCE_DIR/..."|| failed=1
+  echo "   💪 ${PLUGIN}-linux-arm64"
+  GOOS=linux GOARCH=arm64 go build -mod=vendor -ldflags "${ld_flags}" -o ./${PLUGIN}-linux-arm64 ./cmd/... || failed=1
   echo "   🍏 ${PLUGIN}-darwin-amd64"
   GOOS=darwin GOARCH=amd64 go build -ldflags "${ld_flags}" -o ./${PLUGIN}-darwin-amd64 "./$MAIN_SOURCE_DIR/..." || failed=1
   echo "   🎠 ${PLUGIN}-windows-amd64.exe"
   GOOS=windows GOARCH=amd64 go build -ldflags "${ld_flags}" -o ./${PLUGIN}-windows-amd64.exe "./$MAIN_SOURCE_DIR/..." || failed=1
-
+  echo "   Z  ${PLUGIN}-linux-s390x"
+  GOOS=linux GOARCH=s390x go build -mod=vendor -ldflags "${ld_flags}" -o ./${PLUGIN}-linux-s390x ./cmd/... || failed=1
+  echo "   P  ${PLUGIN}-linux-ppc64le"
+  GOOS=linux GOARCH=ppc64le go build -mod=vendor -ldflags "${ld_flags}" -o ./${PLUGIN}-linux-ppc64le ./cmd/... || failed=1
   return ${failed}
 }
 
@@ -329,6 +334,9 @@ if $(has_flag --debug); then
     set -x
 fi
 
+# Global variables
+source $(basedir)/hack/global_vars.sh
+
 # Shared funcs with CI
 source $(basedir)/hack/build-flags.sh
 
@@ -336,3 +344,4 @@ source $(basedir)/hack/build-flags.sh
 apply_emoji_fixes
 
 run $*
+

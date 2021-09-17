@@ -1,6 +1,6 @@
-module github.com/rhuss/kn-service-log
+module knative.dev/kn-plugin-service-log
 
-go 1.14
+go 1.16
 
 require (
 	github.com/fatih/color v1.9.0
@@ -10,6 +10,5 @@ require (
 	k8s.io/apimachinery v0.21.4
 	k8s.io/client-go v0.21.4
 	k8s.io/klog v1.0.0
-	knative.dev/client v0.25.1-0.20210907172119-dedcad7c7ec8
-	knative.dev/hack v0.0.0-20210806075220-815cd312d65c
+	knative.dev/client v0.25.1-0.20210913155632-82a21a5773be
 )
