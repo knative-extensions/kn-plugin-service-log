@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Copyright 2020 The Knative Authors
 #
@@ -87,7 +87,8 @@ run() {
   go_test
 
   echo "────────────────────────────────────────────"
-  ./$PLUGIN --version
+  # Need to implement this first
+  # ./$PLUGIN --version
 }
 
 
@@ -97,6 +98,9 @@ codegen() {
 
   # Format source code and cleanup imports
   source_format
+
+  # Lint source code
+  (( ! IS_PROW )) && source_lint
 
   # Check for license headers
   check_license
@@ -123,6 +127,12 @@ source_format() {
      find $(echo $SOURCE_DIRS) -name "*.go" -print0 | xargs -0 gofmt -s -w
   fi
   set -e
+}
+
+source_lint() {
+  echo "🔍 Lint"
+  run_go_tool github.com/golangci/golangci-lint/cmd/golangci-lint golangci-lint run  || \
+  { echo "--- FAIL: golangci-lint failed please fix the reported errors"; return 1; }
 }
 
 go_build() {
@@ -183,8 +193,7 @@ check_license() {
 
 update_deps() {
   echo "🚒 Update"
-  go mod tidy
-  go mod vendor
+  $(basedir)/hack/update-deps.sh
 }
 
 watch() {
@@ -333,6 +342,9 @@ if $(has_flag --debug); then
     export PS4='+($(basename ${BASH_SOURCE[0]}):${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
     set -x
 fi
+
+# Shared funcs from hack repo
+source $(basedir)/vendor/knative.dev/hack/library.sh
 
 # Global variables
 source $(basedir)/hack/global_vars.sh

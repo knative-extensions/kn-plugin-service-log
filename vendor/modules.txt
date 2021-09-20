@@ -226,6 +226,9 @@ k8s.io/utils/integer
 # knative.dev/client v0.25.1-0.20210913155632-82a21a5773be
 ## explicit
 knative.dev/client/pkg/kn/plugin
+# knative.dev/hack v0.0.0-20210806075220-815cd312d65c
+## explicit
+knative.dev/hack
 # sigs.k8s.io/structured-merge-diff/v4 v4.1.2
 sigs.k8s.io/structured-merge-diff/v4/fieldpath
 sigs.k8s.io/structured-merge-diff/v4/schema

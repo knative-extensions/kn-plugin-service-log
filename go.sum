@@ -1642,6 +1642,7 @@ knative.dev/client v0.25.1-0.20210913155632-82a21a5773be h1:ABPaCouvlBCCh1PG7z4V
 knative.dev/client v0.25.1-0.20210913155632-82a21a5773be/go.mod h1:xnQ948MvvlWSF/625+VYcQPLwDhK5ozIPbQXUEHWicU=
 knative.dev/eventing v0.25.1-0.20210909163359-316e14d7fbc2/go.mod h1:TIwKUgnYc56nHR/pUcEOXGey8iWiGgcWZymp7CO7VpA=
 knative.dev/hack v0.0.0-20210622141627-e28525d8d260/go.mod h1:PHt8x8yX5Z9pPquBEfIj0X66f8iWkWfR0S/sarACJrI=
+knative.dev/hack v0.0.0-20210806075220-815cd312d65c h1:nOXoDWAAItwr4o0dp3nHr6skgpVD4IvME/UX84YNl5k=
 knative.dev/hack v0.0.0-20210806075220-815cd312d65c/go.mod h1:PHt8x8yX5Z9pPquBEfIj0X66f8iWkWfR0S/sarACJrI=
 knative.dev/hack/schema v0.0.0-20210806075220-815cd312d65c/go.mod h1:ffjwmdcrH5vN3mPhO8RrF2KfNnbHeCE2C60A+2cv3U0=
 knative.dev/networking v0.0.0-20210910120730-eb37d69eb87f/go.mod h1:Bq/n7aJlzPiieLpB/ndIgZXUJeGf50LXN7AQ/UaL6KA=

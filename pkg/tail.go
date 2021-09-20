@@ -25,15 +25,12 @@ import (
 	"github.com/fatih/color"
 	v12 "k8s.io/api/core/v1"
 	v1 "k8s.io/client-go/kubernetes/typed/core/v1"
-
-	"k8s.io/client-go/rest"
 )
 
 type Tail struct {
 	namespace     string
 	podName       string
 	revisionName  string
-	req           *rest.Request
 	closed        chan struct{}
 	revisionColor *color.Color
 	podColor      *color.Color
