@@ -25,4 +25,4 @@ SOURCE_DIRS="cmd pkg"
 MAIN_SOURCE_DIR="cmd"
 
 # Package which holds the version variables
-VERSION_PACKAGE="knative.dev/kn-service-log/pkg"
+VERSION_PACKAGE="knative.dev/kn-plugin-service-log/pkg"

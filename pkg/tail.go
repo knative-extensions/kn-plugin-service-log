@@ -1,4 +1,4 @@
-// Copyright © 2020
+// Copyright © 2021 The Knative Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,15 +25,12 @@ import (
 	"github.com/fatih/color"
 	v12 "k8s.io/api/core/v1"
 	v1 "k8s.io/client-go/kubernetes/typed/core/v1"
-
-	"k8s.io/client-go/rest"
 )
 
 type Tail struct {
 	namespace     string
 	podName       string
 	revisionName  string
-	req           *rest.Request
 	closed        chan struct{}
 	revisionColor *color.Color
 	podColor      *color.Color
