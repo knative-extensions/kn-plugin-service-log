@@ -223,7 +223,7 @@ k8s.io/klog
 k8s.io/klog/v2
 # k8s.io/utils v0.0.0-20210111153108-fddb29f9d009
 k8s.io/utils/integer
-# knative.dev/client v0.25.1-0.20210913155632-82a21a5773be
+# knative.dev/client v0.25.1-0.20210921184138-539a5a97a692
 ## explicit
 knative.dev/client/pkg/kn/plugin
 # knative.dev/hack v0.0.0-20210806075220-815cd312d65c
