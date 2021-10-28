@@ -41,14 +41,14 @@ github.com/spf13/cobra
 # github.com/spf13/pflag v1.0.5
 ## explicit
 github.com/spf13/pflag
-# golang.org/x/net v0.0.0-20210928044308-7d9f5e0b762b
+# golang.org/x/net v0.0.0-20211015210444-4f30a5c0130f
 golang.org/x/net/context
 golang.org/x/net/context/ctxhttp
 golang.org/x/net/http/httpguts
 golang.org/x/net/http2
 golang.org/x/net/http2/hpack
 golang.org/x/net/idna
-# golang.org/x/oauth2 v0.0.0-20210819190943-2bc19b11175f
+# golang.org/x/oauth2 v0.0.0-20211005180243-6b3c2da341f1
 golang.org/x/oauth2
 golang.org/x/oauth2/internal
 # golang.org/x/sys v0.0.0-20210917161153-d61c044b1678
@@ -223,10 +223,10 @@ k8s.io/klog
 k8s.io/klog/v2
 # k8s.io/utils v0.0.0-20210111153108-fddb29f9d009
 k8s.io/utils/integer
-# knative.dev/client v0.26.1-0.20211014105642-b1e4132be8b5
+# knative.dev/client v0.26.1-0.20211028082427-f027b38e200a
 ## explicit
 knative.dev/client/pkg/kn/plugin
-# knative.dev/hack v0.0.0-20211015200324-86876688e735
+# knative.dev/hack v0.0.0-20211028194650-b96d65a5ff5e
 ## explicit
 knative.dev/hack
 # sigs.k8s.io/structured-merge-diff/v4 v4.1.2
