@@ -10,6 +10,6 @@ require (
 	k8s.io/apimachinery v0.21.4
 	k8s.io/client-go v0.21.4
 	k8s.io/klog v1.0.0
-	knative.dev/client v0.26.1-0.20211014105642-b1e4132be8b5
-	knative.dev/hack v0.0.0-20211015200324-86876688e735
+	knative.dev/client v0.26.1-0.20211028082427-f027b38e200a
+	knative.dev/hack v0.0.0-20211028194650-b96d65a5ff5e
 )
