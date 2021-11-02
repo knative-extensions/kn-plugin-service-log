@@ -6,6 +6,8 @@
 
 ## kn-service-log
 
+https://github.com/knative/community/tree/main/mechanics/MATURITY-LEVELS.md[*This component is ALPHA*]
+
 // Add a summary description here. This description should fit in a single sentence.
 
 `kn service log SERVICE` follow the current logs of a service's running pods.
