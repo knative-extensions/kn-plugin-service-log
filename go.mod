@@ -12,4 +12,5 @@ require (
 	k8s.io/klog v1.0.0
 	knative.dev/client v0.29.1-0.20220304172736-d12d4cda9244
 	knative.dev/hack v0.0.0-20220224013837-e1785985d364
+	knative.dev/pkg v0.0.0-20220301181942-2fdd5f232e77 // indirect
 )

@@ -31,7 +31,6 @@ import (
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/klog"
-	"knative.dev/client/pkg/kn/commands"
 )
 
 func NewLogCommand() *cobra.Command {
@@ -50,7 +49,7 @@ Requires a connection to a Kubernetes cluster
 	flag.Parse()
 	pflag.CommandLine.AddGoFlagSet(flag.CommandLine)
 
-	commands.AddNamespaceFlags(cmd.Flags(), false)
+	AddNamespaceFlags(cmd.Flags(), false)
 	return cmd
 }
 
