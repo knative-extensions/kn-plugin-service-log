@@ -49,6 +49,7 @@ Requires a connection to a Kubernetes cluster
 	flag.Parse()
 	pflag.CommandLine.AddGoFlagSet(flag.CommandLine)
 
+	AddNamespaceFlags(cmd.Flags(), false)
 	return cmd
 }
 
@@ -63,6 +64,9 @@ func printLogs(cmd *cobra.Command, args []string) error {
 	clientConfig, ns, err := getClientConfig()
 	if err != nil {
 		return err
+	}
+	if namespace := cmd.Flag("namespace"); namespace != nil && namespace.Value.String() != "" {
+		ns = namespace.Value.String()
 	}
 
 	// Client for accessing pods

@@ -2081,8 +2081,9 @@ knative.dev/pkg v0.0.0-20220215153400-3c00bb0157b9/go.mod h1:6ZoCgi60jSUn/WrwTGN
 knative.dev/pkg v0.0.0-20220217155112-d48172451966/go.mod h1:qymIihGpeunap7KEUhrKRcm0LjhkCjL+n7ryIx2kLH0=
 knative.dev/pkg v0.0.0-20220222211204-80c511aa340f/go.mod h1:qymIihGpeunap7KEUhrKRcm0LjhkCjL+n7ryIx2kLH0=
 knative.dev/pkg v0.0.0-20220225161142-708dc1cc48e9/go.mod h1:R3Nha5VzzyB3dwg1toxdUjCf0tH9FfMDcI6miLw5v4E=
-knative.dev/pkg v0.0.0-20220228195509-fe264173447b h1:93HDyR8WPjByf+JHZiQkBMW4IqrkOxXbDaXcLQhh4qU=
 knative.dev/pkg v0.0.0-20220228195509-fe264173447b/go.mod h1:SsH9J6Gz+CvrHmoL0TELJXmMmohqKSQ5bpJvCv+1+ZI=
+knative.dev/pkg v0.0.0-20220301181942-2fdd5f232e77 h1:eIH936a0/1X/XQOMN9+O3fw9spGvOJiMVKsBuu8J47U=
+knative.dev/pkg v0.0.0-20220301181942-2fdd5f232e77/go.mod h1:SsH9J6Gz+CvrHmoL0TELJXmMmohqKSQ5bpJvCv+1+ZI=
 knative.dev/reconciler-test v0.0.0-20220216192840-2c3291f210ce/go.mod h1:m2q6+mGqlPsJ6qP0ssMv3x2UBwIgTdTxgxJ6GK5kgu4=
 knative.dev/serving v0.29.1-0.20220227211007-7f681da66b28/go.mod h1:R7+42YVnhF9Wn/D7JCX5hZ9CnLjHKtvlUJuapKFZYDU=
 mvdan.cc/gofumpt v0.1.1/go.mod h1:yXG1r1WqZVKWbVRtBWKWX9+CxGYfA51nSomhM0woR48=
