@@ -44,10 +44,19 @@ Requires a connection to a Kubernetes cluster
 		RunE: printLogs,
 	}
 
-	// Initialize Kubernetes logging system
-	klog.InitFlags(nil)
 	flag.Parse()
-	pflag.CommandLine.AddGoFlagSet(flag.CommandLine)
+	// Initialize Kubernetes logging system
+	klogFlags := flag.NewFlagSet("klog", flag.ExitOnError)
+	klog.InitFlags(klogFlags)
+	// Sync the glog and klog flags
+	flag.CommandLine.VisitAll(func(f1 *flag.Flag) {
+		f2 := klogFlags.Lookup(f1.Name)
+		if f2 != nil {
+			value := f1.Value.String()
+			_ = f2.Value.Set(value)
+		}
+	})
+	pflag.CommandLine.AddGoFlagSet(klogFlags)
 
 	AddNamespaceFlags(cmd.Flags(), false)
 	return cmd
