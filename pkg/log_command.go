@@ -17,12 +17,10 @@ package pkg
 import (
 	"context"
 	"errors"
-	"flag"
 	"fmt"
 	"os"
 
 	"github.com/spf13/cobra"
-	"github.com/spf13/pflag"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"
@@ -30,7 +28,6 @@ import (
 	corev1 "k8s.io/client-go/kubernetes/typed/core/v1"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
-	"k8s.io/klog"
 )
 
 func NewLogCommand() *cobra.Command {
@@ -43,20 +40,6 @@ Requires a connection to a Kubernetes cluster
 `,
 		RunE: printLogs,
 	}
-
-	flag.Parse()
-	// Initialize Kubernetes logging system
-	klogFlags := flag.NewFlagSet("klog", flag.ExitOnError)
-	klog.InitFlags(klogFlags)
-	// Sync the glog and klog flags
-	flag.CommandLine.VisitAll(func(f1 *flag.Flag) {
-		f2 := klogFlags.Lookup(f1.Name)
-		if f2 != nil {
-			value := f1.Value.String()
-			_ = f2.Value.Set(value)
-		}
-	})
-	pflag.CommandLine.AddGoFlagSet(klogFlags)
 
 	AddNamespaceFlags(cmd.Flags(), false)
 	return cmd
