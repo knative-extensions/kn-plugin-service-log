@@ -7,34 +7,22 @@ entrypoint functionality.
 
 This is a helper script to run the presubmit tests. To use it:
 
-1. Source this script.
+1. Source this script:
+   ```bash
+   source "$(go run knative.dev/hack/cmd/script presubmit-tests.sh)"
+   ```
 
 1. [optional] Define the function `build_tests()`. If you don't define this
    function, the default action for running the build tests is to:
 
-   - check markdown files
    - run `go build` on the entire repo
-   - run `/hack/verify-codegen.sh` (if it exists)
+   - run `hack/verify-codegen.sh` (if it exists)
    - check licenses in all go packages
-
-   The markdown link checker tool doesn't check `localhost` links by default.
-   Its configuration file, `markdown-link-check-config.json`, lives in the
-   `hack` directory. To override it, create a file with the same name,
-   containing the custom config in the `/test` directory.
-
-   The markdown lint tool ignores long lines by default. Its configuration file,
-   `markdown-lint-config.rc`, lives in the `hack` repo. To override it, create a
-   file with the same name, containing the custom config in the `/test`
-   directory.
 
 1. [optional] Customize the default build test runner, if you're using it. Set
    the following environment variables if the default values don't fit your
    needs:
 
-   - `DISABLE_MD_LINTING`: Disable linting markdown files, defaults to 0
-     (false).
-   - `DISABLE_MD_LINK_CHECK`: Disable checking links in markdown files, defaults
-     to 0 (false).
    - `PRESUBMIT_TEST_FAIL_FAST`: Fail the presubmit test immediately if a test
      fails, defaults to 0 (false).
 
@@ -85,7 +73,7 @@ skipped.
 ### Sample presubmit test script
 
 ```bash
-source vendor/knative.dev/hack/presubmit-tests.sh
+source "$(go run knative.dev/hack/cmd/script presubmit-tests.sh)"
 
 function post_build_tests() {
   echo "Cleaning up after build tests"
@@ -111,10 +99,13 @@ main "$@"
 This is a helper script for Knative E2E test scripts. To use it:
 
 1. [optional] Customize the test cluster. Pass the flags as described
-   [here](../tools/kntest/pkg/kubetest2/gke/README.md) to the `initialize` function
+   [here](https://github.com/knative/toolbox/blob/main/kntest/pkg/kubetest2/gke/README.md) to the `initialize` function
    call if the default values don't fit your needs.
 
-1. Source the script.
+1. Source the script:
+    ```bash
+    source "$(go run knative.dev/hack/cmd/script e2e-tests.sh)"
+    ```
 
 1. [optional] Write the `knative_setup()` function, which will set up your
    system under test (e.g., Knative Serving).
@@ -137,6 +128,10 @@ This is a helper script for Knative E2E test scripts. To use it:
 1. [optional] Write the `dump_extra_cluster_state()` function. It will be called
    when a test fails, and can dump extra information about the current state of
    the cluster (typically using `kubectl`).
+
+1. [optional] Write the `on_success` function. It will be called when a test succeeds
+
+1. [optional] Write the `on_failure` function. It will be called when a test fails
 
 1. [optional] Write the `parse_flags()` function. It will be called whenever an
    unrecognized flag is passed to the script, allowing you to define your own
@@ -164,9 +159,6 @@ This is a helper script for Knative E2E test scripts. To use it:
 1. By default `knative_teardown()` and `test_teardown()` will be called after
    the tests finish, use `--skip-teardowns` if you don't want them to be called.
 
-1. By default Istio is installed on the cluster via Addon, use
-   `--skip-istio-addon` if you choose not to have it preinstalled.
-
 1. By default Google Kubernetes Engine telemetry to Cloud Logging and Monitoring is disabled.
    This can be enabled by setting `ENABLE_GKE_TELEMETRY` to `true`.
    
@@ -180,8 +172,7 @@ for Knative Serving to be up before running the tests. It also requires that the
 test cluster is created in a specific region, `us-west2`.
 
 ```bash
-
-source vendor/knative.dev/hack/e2e-tests.sh
+source "$(go run knative.dev/hack/cmd/script e2e-tests.sh)"
 
 function knative_setup() {
   start_latest_knative_serving
@@ -215,7 +206,10 @@ This is a helper script for Knative performance test scripts. In combination
 with specific Prow jobs, it can automatically manage the environment for running
 benchmarking jobs for each repo. To use it:
 
-1. Source the script.
+1. Source the script:
+   ```bash
+   source "$(go run knative.dev/hack/cmd/script performance-tests.sh)"
+   ```
 
 1. [optional] Customize GCP project settings for the benchmarks. Set the
    following environment variables if the default value doesn't fit your needs:
@@ -252,7 +246,7 @@ benchmarking jobs for each repo. To use it:
 This script will update `Knative serving` and the given benchmark.
 
 ```bash
-source vendor/knative.dev/hack/performance-tests.sh
+source "$(go run knative.dev/hack/cmd/script performance-tests.sh)"
 
 function update_knative() {
   echo ">> Updating serving"
@@ -271,7 +265,10 @@ main $@
 
 This is a helper script for Knative release scripts. To use it:
 
-1. Source the script.
+1. Source the script:
+    ```bash
+    source "$(go run knative.dev/hack/cmd/script release.sh)"
+    ```
 
 1. [optional] By default, the release script will run
    `./test/presubmit-tests.sh` as the release validation tests. If you need to
@@ -327,7 +324,7 @@ This is a helper script for Knative release scripts. To use it:
 ### Sample release script
 
 ```bash
-source vendor/knative.dev/hack/release.sh
+source "$(go run knative.dev/hack/cmd/script release.sh)"
 
 function build_release() {
   # config/ contains the manifests
