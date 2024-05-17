@@ -5,6 +5,8 @@
 // Tip: Asciidoc authors often use to line-break after each sentence. That way, it's easier to move things around and to identify parts.
 
 ## kn-service-log
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fknative-extensions%2Fkn-plugin-service-log.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fknative-extensions%2Fkn-plugin-service-log?ref=badge_shield)
+
 
 // Add a summary description here. This description should fit in a single sentence.
 
@@ -28,3 +30,7 @@ _this is work in progress ..._
 
 // A longer description which also describes the use cases that this plugin solves.
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fknative-extensions%2Fkn-plugin-service-log.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fknative-extensions%2Fkn-plugin-service-log?ref=badge_large)
