@@ -56,8 +56,8 @@ github.com/google/gofuzz/bytesource
 # github.com/google/uuid v1.6.0
 ## explicit
 github.com/google/uuid
-# github.com/hashicorp/hcl v1.0.0
-## explicit
+# github.com/hashicorp/hcl v1.0.1-vault-5
+## explicit; go 1.15
 github.com/hashicorp/hcl
 github.com/hashicorp/hcl/hcl/ast
 github.com/hashicorp/hcl/hcl/parser
@@ -91,7 +91,7 @@ github.com/mailru/easyjson/jwriter
 # github.com/mattn/go-colorable v0.1.13
 ## explicit; go 1.15
 github.com/mattn/go-colorable
-# github.com/mattn/go-isatty v0.0.19
+# github.com/mattn/go-isatty v0.0.20
 ## explicit; go 1.15
 github.com/mattn/go-isatty
 # github.com/mitchellh/go-homedir v1.1.0
@@ -116,7 +116,7 @@ github.com/pelletier/go-toml/v2/internal/characters
 github.com/pelletier/go-toml/v2/internal/danger
 github.com/pelletier/go-toml/v2/internal/tracker
 github.com/pelletier/go-toml/v2/unstable
-# github.com/spf13/afero v1.9.5
+# github.com/spf13/afero v1.10.0
 ## explicit; go 1.16
 github.com/spf13/afero
 github.com/spf13/afero/internal/common
@@ -391,14 +391,14 @@ k8s.io/utils/clock/testing
 k8s.io/utils/internal/third_party/forked/golang/net
 k8s.io/utils/net
 k8s.io/utils/strings/slices
-# knative.dev/client v0.42.1-0.20240829135718-bb1f89963427
-## explicit; go 1.22.0
-knative.dev/client/pkg/kn/config
-knative.dev/client/pkg/kn/plugin
 # knative.dev/client-pkg v0.0.0-20240808015000-22f598931483
 ## explicit; go 1.22
 knative.dev/client-pkg/pkg/plugin
-# knative.dev/hack v0.0.0-20240814130635-06f7aff93954
+# knative.dev/client/pkg v0.0.0-20240909014508-fd0126d099c7
+## explicit; go 1.22.0
+knative.dev/client/pkg/config
+knative.dev/client/pkg/plugin
+# knative.dev/hack v0.0.0-20240909014011-fc6a8452af6d
 ## explicit; go 1.21
 knative.dev/hack
 # sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd

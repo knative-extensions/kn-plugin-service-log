@@ -2,19 +2,17 @@ module knative.dev/kn-plugin-service-log
 
 go 1.22.0
 
-toolchain go1.22.6
-
 require (
 	github.com/fatih/color v1.14.1
-	github.com/hashicorp/hcl v1.0.0
+	github.com/hashicorp/hcl v1.0.1-vault-5
 	github.com/spf13/cobra v1.7.0
 	github.com/spf13/pflag v1.0.5
 	gotest.tools/v3 v3.3.0
 	k8s.io/api v0.30.3
 	k8s.io/apimachinery v0.30.3
 	k8s.io/client-go v0.30.3
-	knative.dev/client v0.42.1-0.20240829135718-bb1f89963427
-	knative.dev/hack v0.0.0-20240814130635-06f7aff93954
+	knative.dev/client/pkg v0.0.0-20240909014508-fd0126d099c7
+	knative.dev/hack v0.0.0-20240909014011-fc6a8452af6d
 )
 
 require (
@@ -38,14 +36,14 @@ require (
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
-	github.com/mattn/go-isatty v0.0.19 // indirect
+	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.9 // indirect
-	github.com/spf13/afero v1.9.5 // indirect
+	github.com/spf13/afero v1.10.0 // indirect
 	github.com/spf13/cast v1.5.1 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/viper v1.16.0 // indirect
