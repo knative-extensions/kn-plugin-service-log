@@ -17,9 +17,8 @@ package plugin
 import (
 	"os"
 
+	"knative.dev/client/pkg/plugin"
 	"knative.dev/kn-plugin-service-log/pkg"
-
-	"knative.dev/client/pkg/kn/plugin"
 )
 
 func init() {
