@@ -394,11 +394,11 @@ k8s.io/utils/strings/slices
 # knative.dev/client-pkg v0.0.0-20240808015000-22f598931483
 ## explicit; go 1.22
 knative.dev/client-pkg/pkg/plugin
-# knative.dev/client/pkg v0.0.0-20240909014508-fd0126d099c7
+# knative.dev/client/pkg v0.0.0-20241016014431-dbb49e603ce2
 ## explicit; go 1.22.0
 knative.dev/client/pkg/config
 knative.dev/client/pkg/plugin
-# knative.dev/hack v0.0.0-20240909014011-fc6a8452af6d
+# knative.dev/hack v0.0.0-20241010131451-05b2fb30cb4d
 ## explicit; go 1.21
 knative.dev/hack
 # sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd
