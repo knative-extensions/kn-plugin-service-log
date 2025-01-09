@@ -147,25 +147,25 @@ github.com/spf13/viper/internal/encoding/yaml
 # github.com/subosito/gotenv v1.6.0
 ## explicit; go 1.18
 github.com/subosito/gotenv
-# golang.org/x/net v0.28.0
+# golang.org/x/net v0.31.0
 ## explicit; go 1.18
 golang.org/x/net/http/httpguts
 golang.org/x/net/http2
 golang.org/x/net/http2/hpack
 golang.org/x/net/idna
-# golang.org/x/oauth2 v0.22.0
+# golang.org/x/oauth2 v0.23.0
 ## explicit; go 1.18
 golang.org/x/oauth2
 golang.org/x/oauth2/internal
-# golang.org/x/sys v0.24.0
+# golang.org/x/sys v0.27.0
 ## explicit; go 1.18
 golang.org/x/sys/plan9
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-# golang.org/x/term v0.23.0
+# golang.org/x/term v0.26.0
 ## explicit; go 1.18
 golang.org/x/term
-# golang.org/x/text v0.17.0
+# golang.org/x/text v0.20.0
 ## explicit; go 1.18
 golang.org/x/text/encoding
 golang.org/x/text/encoding/internal
@@ -180,8 +180,8 @@ golang.org/x/text/unicode/norm
 # golang.org/x/time v0.6.0
 ## explicit; go 1.18
 golang.org/x/time/rate
-# google.golang.org/protobuf v1.34.2
-## explicit; go 1.20
+# google.golang.org/protobuf v1.35.2
+## explicit; go 1.21
 google.golang.org/protobuf/encoding/prototext
 google.golang.org/protobuf/encoding/protowire
 google.golang.org/protobuf/internal/descfmt
@@ -391,14 +391,14 @@ k8s.io/utils/clock/testing
 k8s.io/utils/internal/third_party/forked/golang/net
 k8s.io/utils/net
 k8s.io/utils/strings/slices
-# knative.dev/client-pkg v0.0.0-20240808015000-22f598931483
-## explicit; go 1.22
-knative.dev/client-pkg/pkg/plugin
-# knative.dev/client/pkg v0.0.0-20240909014508-fd0126d099c7
+# knative.dev/client-pkg v0.0.0-20241106014333-14f4a3a4c3e1
 ## explicit; go 1.22.0
+knative.dev/client-pkg/pkg/plugin
+# knative.dev/client/pkg v0.0.0-20250109131815-c3b3be9de477
+## explicit; go 1.22.7
 knative.dev/client/pkg/config
 knative.dev/client/pkg/plugin
-# knative.dev/hack v0.0.0-20240909014011-fc6a8452af6d
+# knative.dev/hack v0.0.0-20250109131303-f8be0ccdff36
 ## explicit; go 1.21
 knative.dev/hack
 # sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd
