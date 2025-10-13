@@ -8,11 +8,11 @@ require (
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/pflag v1.0.10
 	gotest.tools/v3 v3.3.0
-	k8s.io/api v0.33.4
-	k8s.io/apimachinery v0.33.4
-	k8s.io/client-go v0.33.4
-	knative.dev/client/pkg v0.0.0-20250916022302-e00c8e46df26
-	knative.dev/hack v0.0.0-20250902153942-1499de21e119
+	k8s.io/api v0.33.5
+	k8s.io/apimachinery v0.33.5
+	k8s.io/client-go v0.33.5
+	knative.dev/client/pkg v0.0.0-20251013022316-b9b74c22e298
+	knative.dev/hack v0.0.0-20251013111017-49bc1be5f373
 )
 
 require (
