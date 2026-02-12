@@ -400,11 +400,11 @@ k8s.io/utils/clock
 k8s.io/utils/internal/third_party/forked/golang/net
 k8s.io/utils/net
 k8s.io/utils/ptr
-# knative.dev/client/pkg v0.0.0-20260120174010-ce3d8fd535e2
+# knative.dev/client/pkg v0.0.0-20260211142500-86ac0da8143f
 ## explicit; go 1.24.2
 knative.dev/client/pkg/config
 knative.dev/client/pkg/plugin
-# knative.dev/hack v0.0.0-20260120115810-bf6758cba446
+# knative.dev/hack v0.0.0-20260212092700-0126b283bf20
 ## explicit; go 1.24
 knative.dev/hack
 # sigs.k8s.io/json v0.0.0-20241014173422-cfa47c3a1cc8
