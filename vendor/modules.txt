@@ -396,7 +396,7 @@ k8s.io/utils/clock
 k8s.io/utils/internal/third_party/forked/golang/net
 k8s.io/utils/net
 k8s.io/utils/ptr
-# knative.dev/client/pkg v0.0.0-20260428145211-f20b8b877ced
+# knative.dev/client/pkg v0.0.0-20260428220709-8ddae2cae492
 ## explicit; go 1.25.0
 knative.dev/client/pkg/config
 knative.dev/client/pkg/plugin
